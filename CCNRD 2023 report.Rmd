@@ -7,12 +7,11 @@ output:
     df_print: paged
 ---
 
-```{r setup, include=FALSE}
+```{r setup, message = FALSE, echo=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 
 shdat = read.csv("sh data 8.29.23.csv", header = TRUE)
-str(shdat)
 
 shdat$Date= as.Date(shdat$Date, "%m/%d/%Y")
 
@@ -28,7 +27,7 @@ shdat =
 Goal here is just to make some figures of the soil health metrics for samples taken 5/6/2022. So far we have PMC and POXC complete, and are still waiting on ACE protein. It looks like there's no big difference by cropping system (grain vs silage) or cover crop (none, blend, and rye). There might be a little N rate effect- you can see POXC going down with higher N in grain systems. PMC has no trend or the oposite
 
 
-```{r figures}
+```{r figures, echo = FALSE, message = FALSE}
 
 ggplot(shdat,
        aes(x = N.rate, 
@@ -59,7 +58,7 @@ ggplot(shdat,
 
 There's some interesting grouping of the data. It doesn't seem to be related to field replicate.
 
-```{r reps, echo=FALSE}
+```{r reps, echo=FALSE, message = FALSE}
 
 ggplot(shdat,
        aes(x = N.rate, 

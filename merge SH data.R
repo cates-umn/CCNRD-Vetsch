@@ -33,7 +33,7 @@ pmc =
 
 #poxc file
 
-poxc = read.csv("poxc 8.28.23.csv", header = TRUE)
+poxc = read.csv("poxc 8.29.23.csv", header = TRUE)
 
 poxc$Date= as.Date(poxc$Date, "%m/%d/%Y")
 
