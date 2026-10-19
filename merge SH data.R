@@ -68,3 +68,27 @@ ggplot(shdat,
   theme_bw()
   
 
+ggplot(shdat,
+       aes(x = N.rate, 
+           y = minC,
+           color = Rep))+
+  # shape = crop))+
+  geom_point(size = 2)+
+  geom_smooth(method = "lm", se= FALSE)+
+  facet_grid(Depth~crop, scales = "free")+
+  # geom_boxplot()+
+  theme_bw()+
+  labs(y = "24-hour C mineralization")
+
+
+ggplot(shdat,
+       aes(x = N.rate, 
+           y = minC,
+           color = cover, #))+
+           shape = crop))+
+  geom_point(size = 2)+
+  facet_grid(Depth~crop, scales = "free")+
+  geom_smooth(method= "lm", se= FALSE)+
+  # geom_boxplot()+
+  theme_bw()
+  labs(y = "Permanganate Oxidizeable C")
